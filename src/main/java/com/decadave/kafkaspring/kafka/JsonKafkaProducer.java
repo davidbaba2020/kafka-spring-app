@@ -24,14 +24,13 @@ public class JsonKafkaProducer
 
 
     public void sendJsonMessage(User data)
-
     {
 
         LOGGER.info(String.format("Message sent -> %s", data.toString()));
 
         Message<User> message = MessageBuilder
                 .withPayload(data)
-                .setHeader(KafkaHeaders.TOPIC,"davaconnect")
+                .setHeader(KafkaHeaders.TOPIC,"json-davaconnect")
                 .build();
 
         kafkaTemplate.send(message);

@@ -14,4 +14,10 @@ public class KafkaTopicConfig
     {
         return TopicBuilder.name("davaconnect").build();
     }
+
+    @Bean
+    public NewTopic jsonDavacomTopic ()
+    {
+        return TopicBuilder.name("json-davaconnect").build();
+    }
 }
